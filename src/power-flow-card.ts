@@ -14,6 +14,7 @@ import {
   mdiSolarPower,
   mdiTransmissionTower,
   mdiWater,
+  mdi-radiator,
 } from "@mdi/js";
 import { formatNumber, HomeAssistant } from "custom-card-helpers";
 import { css, html, LitElement, svg, TemplateResult } from "lit";
@@ -297,8 +298,8 @@ export class PowerFlowCard extends LitElement {
       ? this.getEntityState(entities.battery_charge)
       : null;
 
-    let batteryIcon = mdiBatteryHigh;
-    if (batteryChargeState === null) {
+    let batteryIcon = mdi-radiator;
+/*    if (batteryChargeState === null) {
       batteryIcon = mdiBattery;
     } else if (batteryChargeState <= 72 && batteryChargeState > 44) {
       batteryIcon = mdiBatteryMedium;
@@ -306,7 +307,7 @@ export class PowerFlowCard extends LitElement {
       batteryIcon = mdiBatteryLow;
     } else if (batteryChargeState <= 16) {
       batteryIcon = mdiBatteryOutline;
-    }
+    }*/
 
     const newDur = {
       batteryGrid: this.circleRate(
